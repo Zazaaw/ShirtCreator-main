@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSnapshot } from 'valtio';
+import { useNavigate } from 'react-router-dom'
 
 import state from '../store';
 
@@ -13,6 +14,7 @@ import {
 } from '../config/motion';
 
 const Home = () => {
+  const navigate = useNavigate()
   const snap = useSnapshot(state);
   return (
     <AnimatePresence>
@@ -23,6 +25,7 @@ const Home = () => {
                     src='./logo-web.png'
                     alt='logo'
                     className='w-8 h-8 object-contain' 
+                    onClick={() => navigate('/LoginAdmin')}
                   />
                 </motion.header>
 
